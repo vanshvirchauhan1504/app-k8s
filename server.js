@@ -14,7 +14,7 @@ app.use(cors(corsOptions)); // Enable CORS for all routes
 
 // Example route
 app.get('/', (req, res) => {
-  res.send('Hello Version 2!');
+  res.send('Hello Version 3!');
 });
 
 // Another route
