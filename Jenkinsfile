@@ -10,18 +10,11 @@ pipeline {
             steps {
                 script {
                     sshagent(credentials: ['ssh-test']) {
+                        // Using cat to read the deploy.sh file and pipe it into SSH
                         sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@${SSH_IP_TEST_APP} << EOF
-                            echo "Hello from Jenkins"
-                            uptime
-                            ls -a
-                            cd app
-                            git pull origin main
-                            # Add more commands here
-                        EOF
+                        ssh -o StrictHostKeyChecking=no ubuntu@${SSH_IP_TEST_APP} "bash -s" < deploy.sh
                         '''
                     }
-
                 }
                 
             }
