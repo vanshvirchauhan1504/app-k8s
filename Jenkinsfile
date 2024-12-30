@@ -15,7 +15,7 @@ pipeline {
                 script {
                     sshagent(credentials: ['ssh-test']) {
                         sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@${SSH_IP_TEST_APP} 'echo "Hello from Jenkins" && uptime'
+                        ssh -o StrictHostKeyChecking=no ubuntu@${SSH_IP_TEST_APP} 'echo "Hello from Jenkins" && uptime  && ls -a'
                         '''
                     }
                 }
