@@ -14,7 +14,7 @@ app.use(cors(corsOptions)); // Enable CORS for all routes
 
 // Example route
 app.get('/', (req, res) => {
-  res.send('Hello NEW CI/CD SERVER!');
+  res.send('Hello Version 1!');
 });
 
 // Another route
